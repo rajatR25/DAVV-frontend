@@ -50,11 +50,11 @@ export default function HRDashboard() {
 
       const [jobRes, appRes] = await Promise.all([
         axios.get(
-          "http://https://davv-backend-api.onrender.com/api/jobs",
+          "https://davv-backend-api.onrender.com/api/jobs",
           config,
         ),
         axios.get(
-          "http://https://davv-backend-api.onrender.com/api/jobs/applications",
+          "https://davv-backend-api.onrender.com/api/jobs/applications",
           config,
         ),
       ]);
@@ -117,14 +117,14 @@ export default function HRDashboard() {
 
       if (editingJob) {
         await axios.put(
-          `http://https://davv-backend-api.onrender.com/api/jobs/${editingJob._id}`,
+          `https://davv-backend-api.onrender.com/api/jobs/${editingJob._id}`,
           jobData,
           config,
         );
         alert("Job Updated Successfully!");
       } else {
         await axios.post(
-          "http://https://davv-backend-api.onrender.com/api/jobs/post",
+          "https://davv-backend-api.onrender.com/api/jobs/post",
           jobData,
           config,
         );
@@ -151,7 +151,7 @@ export default function HRDashboard() {
     try {
       const token = localStorage.getItem("token");
       await axios.delete(
-        `http://https://davv-backend-api.onrender.com/api/jobs/${id}`,
+        `https://davv-backend-api.onrender.com/api/jobs/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         },
@@ -166,7 +166,7 @@ export default function HRDashboard() {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://https://davv-backend-api.onrender.com/api/jobs/status/${id}`,
+        `https://davv-backend-api.onrender.com/api/jobs/status/${id}`,
         { status },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -713,7 +713,7 @@ export default function HRDashboard() {
                 <div className="w-full h-full bg-white rounded-3xl shadow-xl overflow-hidden">
                   {selectedStudent.student?.resume ? (
                     <iframe
-                      src={`http://https://davv-backend-api.onrender.com${selectedStudent.student.resume}`}
+                      src={`https://davv-backend-api.onrender.com${selectedStudent.student.resume}`}
                       className="w-full h-full border-0"
                     ></iframe>
                   ) : (

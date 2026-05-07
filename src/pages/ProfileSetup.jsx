@@ -66,7 +66,7 @@ export default function ProfileSetup() {
       }
       try {
         const response = await fetch(
-          "http://https://davv-backend-api.onrender.com/api/users/profile",
+          "https://davv-backend-api.onrender.com/api/users/profile",
           {
             headers: { Authorization: `Bearer ${token}` },
           },
@@ -118,7 +118,7 @@ export default function ProfileSetup() {
 
     try {
       const response = await fetch(
-        "http://https://davv-backend-api.onrender.com/api/users/profile",
+        "https://davv-backend-api.onrender.com/api/users/profile",
         {
           method: "PUT", // Put for updating profile
           headers: { Authorization: `Bearer ${token}` },

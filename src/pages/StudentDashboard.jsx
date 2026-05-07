@@ -61,11 +61,11 @@ export default function StudentDashboard({ setView }) {
 
         const [profileRes, appRes] = await Promise.all([
           axios.get(
-            "http://https://davv-backend-api.onrender.com/api/users/profile",
+            "https://davv-backend-api.onrender.com/api/users/profile",
             config,
           ),
           axios.get(
-            "http://https://davv-backend-api.onrender.com/api/jobs/applications",
+            "https://davv-backend-api.onrender.com/api/jobs/applications",
             config,
           ),
         ]);
@@ -105,7 +105,7 @@ export default function StudentDashboard({ setView }) {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get(
-          "http://https://davv-backend-api.onrender.com/api/jobs",
+          "https://davv-backend-api.onrender.com/api/jobs",
           {
             headers: { Authorization: `Bearer ${token}` },
           },
@@ -133,7 +133,7 @@ export default function StudentDashboard({ setView }) {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        `http://https://davv-backend-api.onrender.com/api/jobs/${jobId}/apply`,
+        `https://davv-backend-api.onrender.com/api/jobs/${jobId}/apply`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -200,7 +200,7 @@ export default function StudentDashboard({ setView }) {
             : "0.00";
 
         await axios.put(
-          "http://https://davv-backend-api.onrender.com/api/users/update-cgpa",
+          "https://davv-backend-api.onrender.com/api/users/update-cgpa",
           { cgpa: Number(finalCgpa), isProfileComplete: true },
           { headers: { Authorization: `Bearer ${token}` } },
         );

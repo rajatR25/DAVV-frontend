@@ -49,7 +49,7 @@ export default function AuthPage({ setView }) {
     try {
       if (isLogin) {
         const response = await axios.post(
-          "http://https://davv-backend-api.onrender.com/api/users/login",
+          "https://davv-backend-api.onrender.com/api/users/login",
           { email, password },
         );
         const dbRole = response.data.role;
