@@ -85,7 +85,7 @@ export default function App({ onComplete }) {
         if (!token) return;
 
         // Real backend API se data fetch karna
-        const res = await axios.get("http://localhost:5000/api/users/profile", {
+        const res = await axios.get("https://davv-backend-api.onrender.com/api/users/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -129,7 +129,7 @@ export default function App({ onComplete }) {
           }));
 
           if (res.data.profilePic) {
-            setProfilePreview(`http://localhost:5000${res.data.profilePic}`);
+            setProfilePreview(`https://davv-backend-api.onrender.com${res.data.profilePic}`);
           }
         }
       } catch (err) {
@@ -211,7 +211,7 @@ export default function App({ onComplete }) {
     if (fieldName === "profilePic") {
       setProfilePreview(
         formData.existingProfilePic
-          ? `http://localhost:5000${formData.existingProfilePic}`
+          ? `https://davv-backend-api.onrender.com${formData.existingProfilePic}`
           : null,
       );
     }
@@ -279,7 +279,7 @@ export default function App({ onComplete }) {
       });
 
       await axios.put(
-        "http://localhost:5000/api/users/advanced-profile-update",
+        "https://davv-backend-api.onrender.com/api/users/advanced-profile-update",
         submitData,
         {
           headers: {
@@ -345,7 +345,7 @@ export default function App({ onComplete }) {
                 <img
                   src={
                     profilePreview ||
-                    `http://localhost:5000${formData.existingProfilePic}`
+                    `https://davv-backend-api.onrender.com${formData.existingProfilePic}`
                   }
                   alt="Profile"
                   className="w-full h-full object-cover rounded-full"

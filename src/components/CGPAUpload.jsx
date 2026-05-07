@@ -10,7 +10,7 @@ const CGPAUpload = ({ onUpdate }) => {
     isScanning: false,
   });
 
-  const API_URL = "http://localhost:5000/api/users/ocr-extract";
+  const API_URL = "https://davv-backend-api.onrender.com/api/users/ocr-extract";
 
   const handleFileUpload = async (event) => {
   const file = event.target.files[0];

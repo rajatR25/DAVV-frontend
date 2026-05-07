@@ -8,17 +8,15 @@ import HRDashboard from './pages/HRDashboard';
 import AdminDashboard from './pages/AdminDashboard'; 
 
 export default function App() {
-  // Default view 'auth' rahega, lekin useEffect ise update kar dega
   const [view, setView] = useState('auth');
   const [loading, setLoading] = useState(true);
 
-  // --- 🚀 SESSION PERSISTENCE LOGIC ---
+  // ---SESSION PERSISTENCE LOGIC ---
   useEffect(() => {
     const token = localStorage.getItem("token");
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
     if (token && userInfo) {
-      // Role ke hisab se sahi dashboard par redirect karo
       if (userInfo.role === 'admin') setView('admin-dashboard');
       else if (userInfo.role === 'hr') setView('hr-dashboard');
       else setView('student-dashboard');
@@ -26,13 +24,12 @@ export default function App() {
     setLoading(false);
   }, []);
 
-  // Logout function jo state aur storage dono saaf karega
   const handleLogout = () => {
     localStorage.clear();
     setView('auth');
   };
 
-  if (loading) return null; // Blink rokne ke liye
+  if (loading) return null;
 
   const renderView = () => {
     switch(view) {

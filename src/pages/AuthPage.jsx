@@ -49,7 +49,7 @@ export default function AuthPage({ setView }) {
     try {
       if (isLogin) {
         const response = await axios.post(
-          "http://localhost:5000/api/users/login",
+          "http://https://davv-backend-api.onrender.com/api/users/login",
           { email, password },
         );
         const dbRole = response.data.role;
@@ -81,7 +81,7 @@ export default function AuthPage({ setView }) {
           role: role === "company" ? "hr" : role,
           ...(role === "company" && { companyName }),
         };
-        await axios.post("http://localhost:5000/api/users/register", payload);
+        await axios.post("http://https://davv-backend-api.onrender.com/api/users/register", payload);
         alert("Registration Successful! Please login now.");
         setIsLogin(true);
       }
