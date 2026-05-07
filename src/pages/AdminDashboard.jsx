@@ -118,7 +118,7 @@ export default function AdminDashboard() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "https://davv-backend-api.onrender.com/api/users/invite-hr",
+        "https://davv-backend-api.onrender.com/api/admin/invite-hr",
         { companyName, email },
         { headers: { Authorization: `Bearer ${token}` } },
       );
