@@ -81,7 +81,7 @@ export default function AuthPage({ setView }) {
           role: role === "company" ? "hr" : role,
           ...(role === "company" && { companyName }),
         };
-        await axios.post("http://https://davv-backend-api.onrender.com/api/users/register", payload);
+        await axios.post("https://davv-backend-api.onrender.com/api/users/register", payload);
         alert("Registration Successful! Please login now.");
         setIsLogin(true);
       }
